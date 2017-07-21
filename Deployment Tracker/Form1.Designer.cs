@@ -45,12 +45,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.numRoomsTxt = new System.Windows.Forms.MaskedTextBox();
             this.roomQtyLbl = new System.Windows.Forms.Label();
             this.createMapBtn = new System.Windows.Forms.Button();
             this.RoomMap = new System.Windows.Forms.TableLayoutPanel();
             this.ID_Assignments = new System.Windows.Forms.TabPage();
             this.splitter1 = new System.Windows.Forms.Splitter();
-            this.numRoomsTxt = new System.Windows.Forms.MaskedTextBox();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.Inventory.SuspendLayout();
@@ -132,7 +132,6 @@
             // roomMapSidePanel
             // 
             this.roomMapSidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.roomMapSidePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.roomMapSidePanel.Controls.Add(this.panel4);
             this.roomMapSidePanel.Controls.Add(this.panel3);
             this.roomMapSidePanel.Controls.Add(this.label1);
@@ -235,6 +234,18 @@
             this.panel2.Size = new System.Drawing.Size(267, 36);
             this.panel2.TabIndex = 1;
             // 
+            // numRoomsTxt
+            // 
+            this.numRoomsTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numRoomsTxt.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.numRoomsTxt.Location = new System.Drawing.Point(213, 8);
+            this.numRoomsTxt.Name = "numRoomsTxt";
+            this.numRoomsTxt.PromptChar = '.';
+            this.numRoomsTxt.Size = new System.Drawing.Size(37, 20);
+            this.numRoomsTxt.TabIndex = 1;
+            this.numRoomsTxt.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.numRoomsTxt.Click += new System.EventHandler(this.numRoomsTxt_Click);
+            // 
             // roomQtyLbl
             // 
             this.roomQtyLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -259,7 +270,7 @@
             this.createMapBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createMapBtn.Location = new System.Drawing.Point(0, 368);
             this.createMapBtn.Name = "createMapBtn";
-            this.createMapBtn.Size = new System.Drawing.Size(265, 51);
+            this.createMapBtn.Size = new System.Drawing.Size(267, 51);
             this.createMapBtn.TabIndex = 0;
             this.createMapBtn.Text = "Create Map";
             this.createMapBtn.UseVisualStyleBackColor = false;
@@ -267,15 +278,15 @@
             // 
             // RoomMap
             // 
-            this.RoomMap.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.RoomMap.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
             this.RoomMap.ColumnCount = 1;
-            this.RoomMap.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.RoomMap.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.RoomMap.Dock = System.Windows.Forms.DockStyle.Right;
-            this.RoomMap.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.AddColumns;
+            this.RoomMap.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.RoomMap.Location = new System.Drawing.Point(267, 0);
             this.RoomMap.Name = "RoomMap";
             this.RoomMap.RowCount = 1;
-            this.RoomMap.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.RoomMap.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.RoomMap.Size = new System.Drawing.Size(1205, 419);
             this.RoomMap.TabIndex = 0;
             // 
@@ -296,18 +307,6 @@
             this.splitter1.Size = new System.Drawing.Size(3, 747);
             this.splitter1.TabIndex = 2;
             this.splitter1.TabStop = false;
-            // 
-            // numRoomsTxt
-            // 
-            this.numRoomsTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numRoomsTxt.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.numRoomsTxt.Location = new System.Drawing.Point(213, 8);
-            this.numRoomsTxt.Name = "numRoomsTxt";
-            this.numRoomsTxt.PromptChar = '.';
-            this.numRoomsTxt.Size = new System.Drawing.Size(37, 20);
-            this.numRoomsTxt.TabIndex = 1;
-            this.numRoomsTxt.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.numRoomsTxt.Click += new System.EventHandler(this.numRoomsTxt_Click);
             // 
             // Form1
             // 

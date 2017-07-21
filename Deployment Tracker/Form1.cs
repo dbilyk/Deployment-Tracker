@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace Deployment_Tracker
 {
+    
+
+
     public partial class Form1 : Form
     {
         public Form1()
@@ -36,56 +39,146 @@ namespace Deployment_Tracker
 
         private void createMapBtn_Click(object sender, EventArgs e)
         {
+            RoomMap.ColumnStyles.Clear();
+            RoomMap.RowStyles.Clear();
+
+
+            //create table via total desired rooms
             if (numRoomsTxt.Text != "")
             {
                 int RoomCount = Convert.ToInt16(numRoomsTxt.Text);
                 int ColumnCt = 1;
                 int RowCt = RoomCount;
-
-                while (ColumnCt < RowCt)
+                bool RowsNowPrime = false;
+                while (ColumnCt < RowCt && !RowsNowPrime)
                 {
-                    for (int i = 2;i<=9;i++)
+                    for (int i = 2; i <= 9; i++)
                     {
-                        if (RoomCount % i == 0)
+                        if (RoomCount % i == 0 && RoomCount / i != 1)
                         {
                             RoomCount /= i;
                             ColumnCt *= i;
                             RowCt = RoomCount;
                             break;
                         }
+                        if (i == 9 && RoomCount % i != 0)
+                        {
+                            RoomMap.ColumnCount = ColumnCt;
+                            RoomMap.RowCount = RowCt;
+                            RowsNowPrime = true;
+                        }
                     }
-                    
+
                 }
 
-                for(int i = 1; i <= ColumnCt; i++)
+                for (int i = 0; i <= ColumnCt; i++)
                 {
-                    ColumnStyle newCol = new ColumnStyle(SizeType.Percent, 10f);
+                    ColumnStyle newCol = new ColumnStyle(SizeType.Percent, 0.1f);
                     RoomMap.ColumnStyles.Add(newCol);
+
+
                 }
-                for (int i = 1; i <= RowCt; i++)
+                for (int i = 0; i <= RowCt; i++)
                 {
-                    RowStyle newRow = new RowStyle(SizeType.Percent, 10f);
+                    RowStyle newRow = new RowStyle(SizeType.Percent, 0.1f);
                     RoomMap.RowStyles.Add(newRow);
 
                 }
-                
+                RoomMap.ColumnCount = ColumnCt;
+                RoomMap.RowCount = RowCt;
+
+
             }
-            if(numRoomsTxt.Text == "" && numColTxt.Text != "" && numRowsTxt.Text != "")
+            //create table via rows and columns
+            if (numRoomsTxt.Text == "" && numColTxt.Text != "" && numRowsTxt.Text != "")
             {
                 for (int i = 1; i <= Convert.ToInt16(numColTxt.Text); i++)
                 {
-                    ColumnStyle newCol = new ColumnStyle(SizeType.Percent, 10f);
+                    ColumnStyle newCol = new ColumnStyle(SizeType.Percent, 0.1f);
                     RoomMap.ColumnStyles.Add(newCol);
+
                 }
+
                 for (int i = 1; i <= Convert.ToInt16(numRowsTxt.Text); i++)
                 {
-                    RowStyle newRow = new RowStyle(SizeType.Percent,10f);
+                    RowStyle newRow = new RowStyle(SizeType.Percent, 0.1f);
                     RoomMap.RowStyles.Add(newRow);
-                    
+
                 }
+                RoomMap.ColumnCount = Convert.ToInt16(numColTxt.Text);
+                RoomMap.RowCount = Convert.ToInt16(numRowsTxt.Text);
+
+            }
+
+
+            for (int i = 0; i < RoomMap.ColumnCount; i++)
+            {
+                for (int j = 0; j < RoomMap.RowCount; j++)
+                {
+                    int[] currentID = new int[] { i, j };
+                    RoomCell cell = new RoomCell(currentID);
+                    cell.id = currentID;
+                    RoomMap.Controls.Add(cell.lbl, i, j);
+                    RoomMap.Controls.Add(cell.inputName, i, j);
+                    RoomMap.Controls.Add(cell.cont, i, j);
+
+
+                }
+            }
+
+
+        }
+        public class RoomCell : Form
+        {
+            public int[] id = new int[2];
+            public string name;
+            public Label lbl = new Label();
+            public TextBox inputName = new TextBox();
+            public Panel cont = new Panel();
+
+            public void init()
+            {
+                inputName.Visible = false;
+                lbl.Text = "-";
+                lbl.Click += delegate
+                {
+                    inputName.Visible = true;
+                    lbl.Visible = false;
+
+                };
+            }
+
+            public RoomCell(int[] cellID)
+            {
+                this.id = cellID;
+                this.lbl.Text = cellID[0].ToString() + "," + cellID[1].ToString();
+                lbl.AutoSize = true;
+
+                this.inputName.Visible = false;
+                this.lbl.Click += delegate
+                {
+                    this.inputName.Visible = true;
+                    this.lbl.Visible = false;
+
+                };
+                this.inputName.LostFocus += delegate
+                {
+                    this.inputName.Visible = false;
+                    this.lbl.Visible = true;
+                };
+            }
+
+            private void InitializeComponent()
+            {
+                this.SuspendLayout();
+                // 
+                // RoomCell
+                // 
+                this.ClientSize = new System.Drawing.Size(1365, 640);
+                this.Name = "RoomCell";
+                this.ResumeLayout(false);
 
             }
         }
-
     }
 }
