@@ -11,9 +11,6 @@ using System.Windows.Forms;
 
 namespace Deployment_Tracker
 {
-    
-
-
     public partial class Form1 : Form
     {
         public Form1()
@@ -41,7 +38,7 @@ namespace Deployment_Tracker
         {
             RoomMap.ColumnStyles.Clear();
             RoomMap.RowStyles.Clear();
-
+            RoomMap.Controls.Clear();
 
             //create table via total desired rooms
             if (numRoomsTxt.Text != "")
@@ -118,8 +115,6 @@ namespace Deployment_Tracker
                     int[] currentID = new int[] { i, j };
                     RoomCell cell = new RoomCell(currentID);
                     cell.id = currentID;
-                    RoomMap.Controls.Add(cell.lbl, i, j);
-                    RoomMap.Controls.Add(cell.inputName, i, j);
                     RoomMap.Controls.Add(cell.cont, i, j);
 
 
@@ -136,36 +131,56 @@ namespace Deployment_Tracker
             public TextBox inputName = new TextBox();
             public Panel cont = new Panel();
 
-            public void init()
-            {
-                inputName.Visible = false;
-                lbl.Text = "-";
-                lbl.Click += delegate
-                {
-                    inputName.Visible = true;
-                    lbl.Visible = false;
-
-                };
-            }
-
             public RoomCell(int[] cellID)
             {
                 this.id = cellID;
                 this.lbl.Text = cellID[0].ToString() + "," + cellID[1].ToString();
                 lbl.AutoSize = true;
 
+                this.cont.Dock = DockStyle.Fill;
+                this.cont.Controls.Add(this.lbl);
+                this.cont.Controls.Add(this.inputName);
+
+                this.cont.Click += delegate
+                {
+                    this.cont.Focus();
+                };
+
+
+
+
                 this.inputName.Visible = false;
                 this.lbl.Click += delegate
                 {
+                    
                     this.inputName.Visible = true;
+                    this.inputName.Focus();
                     this.lbl.Visible = false;
 
                 };
+
+                this.inputName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnKeyDownHandler);
+
+                
+
                 this.inputName.LostFocus += delegate
                 {
                     this.inputName.Visible = false;
+                    this.lbl.Text = this.inputName.Text;
                     this.lbl.Visible = true;
                 };
+
+
+               
+                
+            }
+
+            public void OnKeyDownHandler(object sender, KeyEventArgs e)
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    this.Parent.Focus();
+                }
             }
 
             private void InitializeComponent()
@@ -179,6 +194,9 @@ namespace Deployment_Tracker
                 this.ResumeLayout(false);
 
             }
+
+
+
         }
     }
 }
