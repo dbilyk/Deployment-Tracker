@@ -68,7 +68,7 @@
             this.settingsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1480, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1354, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -90,13 +90,13 @@
             // addItemTypeToolStripMenuItem
             // 
             this.addItemTypeToolStripMenuItem.Name = "addItemTypeToolStripMenuItem";
-            this.addItemTypeToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.addItemTypeToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.addItemTypeToolStripMenuItem.Text = "Add Item Type...";
             // 
             // addNewZoneToolStripMenuItem
             // 
             this.addNewZoneToolStripMenuItem.Name = "addNewZoneToolStripMenuItem";
-            this.addNewZoneToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.addNewZoneToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.addNewZoneToolStripMenuItem.Text = "Add Zone...";
             // 
             // tabControl1
@@ -278,11 +278,12 @@
             // 
             // RoomMap
             // 
+            this.RoomMap.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.RoomMap.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
             this.RoomMap.ColumnCount = 1;
             this.RoomMap.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.RoomMap.Dock = System.Windows.Forms.DockStyle.Right;
-            this.RoomMap.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
+            this.RoomMap.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.AddColumns;
             this.RoomMap.Location = new System.Drawing.Point(267, 0);
             this.RoomMap.Name = "RoomMap";
             this.RoomMap.RowCount = 1;
@@ -304,7 +305,7 @@
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 24);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 747);
+            this.splitter1.Size = new System.Drawing.Size(3, 709);
             this.splitter1.TabIndex = 2;
             this.splitter1.TabStop = false;
             // 
@@ -313,7 +314,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1480, 771);
+            this.ClientSize = new System.Drawing.Size(1354, 733);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
