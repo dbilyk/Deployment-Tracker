@@ -179,7 +179,7 @@ namespace Deployment_Tracker
             {
                 if (e.KeyCode == Keys.Enter)
                 {
-                    this.Parent.Focus();
+                    Text
                 }
             }
 
