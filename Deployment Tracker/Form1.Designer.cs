@@ -34,6 +34,18 @@
             this.addItemTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewZoneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.roomMapSidePanel = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.numRoomsTxt = new System.Windows.Forms.MaskedTextBox();
             this.roomQtyLbl = new System.Windows.Forms.Label();
@@ -50,30 +62,18 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.RoomMap = new System.Windows.Forms.TableLayoutPanel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.roomMapSidePanel.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.Inventory.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -128,6 +128,161 @@
             this.roomMapSidePanel.Name = "roomMapSidePanel";
             this.roomMapSidePanel.Size = new System.Drawing.Size(205, 176);
             this.roomMapSidePanel.TabIndex = 1;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.panel6);
+            this.panel5.Controls.Add(this.label4);
+            this.panel5.Controls.Add(this.panel7);
+            this.panel5.Controls.Add(this.panel8);
+            this.panel5.Controls.Add(this.button1);
+            this.panel5.Location = new System.Drawing.Point(-1, -1);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(205, 176);
+            this.panel5.TabIndex = 4;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(133)))), ((int)(((byte)(137)))), ((int)(((byte)(200)))));
+            this.panel6.Controls.Add(this.maskedTextBox1);
+            this.panel6.Controls.Add(this.label1);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Padding = new System.Windows.Forms.Padding(3);
+            this.panel6.Size = new System.Drawing.Size(203, 37);
+            this.panel6.TabIndex = 1;
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.maskedTextBox1.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.maskedTextBox1.Location = new System.Drawing.Point(152, 9);
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.PromptChar = '.';
+            this.maskedTextBox1.Size = new System.Drawing.Size(45, 20);
+            this.maskedTextBox1.TabIndex = 1;
+            this.maskedTextBox1.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(137)))), ((int)(((byte)(200)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(5, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(122, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Number of Rooms";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(0, 35);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(31, 17);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "-or-";
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(133)))), ((int)(((byte)(137)))), ((int)(((byte)(200)))));
+            this.panel7.Controls.Add(this.maskedTextBox2);
+            this.panel7.Controls.Add(this.label5);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel7.Location = new System.Drawing.Point(0, 52);
+            this.panel7.Name = "panel7";
+            this.panel7.Padding = new System.Windows.Forms.Padding(3);
+            this.panel7.Size = new System.Drawing.Size(203, 35);
+            this.panel7.TabIndex = 3;
+            // 
+            // maskedTextBox2
+            // 
+            this.maskedTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.maskedTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.maskedTextBox2.Location = new System.Drawing.Point(152, 8);
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.PromptChar = '.';
+            this.maskedTextBox2.Size = new System.Drawing.Size(45, 20);
+            this.maskedTextBox2.TabIndex = 1;
+            this.maskedTextBox2.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(137)))), ((int)(((byte)(200)))));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(7, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(132, 17);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Number of Columns";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(133)))), ((int)(((byte)(137)))), ((int)(((byte)(200)))));
+            this.panel8.Controls.Add(this.maskedTextBox3);
+            this.panel8.Controls.Add(this.label6);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel8.Location = new System.Drawing.Point(0, 87);
+            this.panel8.Name = "panel8";
+            this.panel8.Padding = new System.Windows.Forms.Padding(3);
+            this.panel8.Size = new System.Drawing.Size(203, 36);
+            this.panel8.TabIndex = 2;
+            // 
+            // maskedTextBox3
+            // 
+            this.maskedTextBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.maskedTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.maskedTextBox3.Location = new System.Drawing.Point(152, 8);
+            this.maskedTextBox3.Name = "maskedTextBox3";
+            this.maskedTextBox3.PromptChar = '.';
+            this.maskedTextBox3.Size = new System.Drawing.Size(45, 20);
+            this.maskedTextBox3.TabIndex = 1;
+            this.maskedTextBox3.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(137)))), ((int)(((byte)(200)))));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(7, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(112, 17);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Number of Rows";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(81)))), ((int)(((byte)(109)))));
+            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(0, 123);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(203, 51);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Create New Zone";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
@@ -331,161 +486,6 @@
             this.tabControl1.Size = new System.Drawing.Size(1328, 491);
             this.tabControl1.TabIndex = 1;
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.panel6);
-            this.panel5.Controls.Add(this.label4);
-            this.panel5.Controls.Add(this.panel7);
-            this.panel5.Controls.Add(this.panel8);
-            this.panel5.Controls.Add(this.button1);
-            this.panel5.Location = new System.Drawing.Point(-1, -1);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(205, 176);
-            this.panel5.TabIndex = 4;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(133)))), ((int)(((byte)(137)))), ((int)(((byte)(200)))));
-            this.panel6.Controls.Add(this.maskedTextBox1);
-            this.panel6.Controls.Add(this.label1);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Padding = new System.Windows.Forms.Padding(3);
-            this.panel6.Size = new System.Drawing.Size(203, 37);
-            this.panel6.TabIndex = 1;
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.maskedTextBox1.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.maskedTextBox1.Location = new System.Drawing.Point(152, 9);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.PromptChar = '.';
-            this.maskedTextBox1.Size = new System.Drawing.Size(45, 20);
-            this.maskedTextBox1.TabIndex = 1;
-            this.maskedTextBox1.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(137)))), ((int)(((byte)(200)))));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Number of Rooms";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(0, 35);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 17);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "-or-";
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(133)))), ((int)(((byte)(137)))), ((int)(((byte)(200)))));
-            this.panel7.Controls.Add(this.maskedTextBox2);
-            this.panel7.Controls.Add(this.label5);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel7.Location = new System.Drawing.Point(0, 52);
-            this.panel7.Name = "panel7";
-            this.panel7.Padding = new System.Windows.Forms.Padding(3);
-            this.panel7.Size = new System.Drawing.Size(203, 35);
-            this.panel7.TabIndex = 3;
-            // 
-            // maskedTextBox2
-            // 
-            this.maskedTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.maskedTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.maskedTextBox2.Location = new System.Drawing.Point(152, 8);
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.PromptChar = '.';
-            this.maskedTextBox2.Size = new System.Drawing.Size(45, 20);
-            this.maskedTextBox2.TabIndex = 1;
-            this.maskedTextBox2.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(137)))), ((int)(((byte)(200)))));
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(7, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(132, 17);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Number of Columns";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(133)))), ((int)(((byte)(137)))), ((int)(((byte)(200)))));
-            this.panel8.Controls.Add(this.maskedTextBox3);
-            this.panel8.Controls.Add(this.label6);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel8.Location = new System.Drawing.Point(0, 87);
-            this.panel8.Name = "panel8";
-            this.panel8.Padding = new System.Windows.Forms.Padding(3);
-            this.panel8.Size = new System.Drawing.Size(203, 36);
-            this.panel8.TabIndex = 2;
-            // 
-            // maskedTextBox3
-            // 
-            this.maskedTextBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.maskedTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.maskedTextBox3.Location = new System.Drawing.Point(152, 8);
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.PromptChar = '.';
-            this.maskedTextBox3.Size = new System.Drawing.Size(45, 20);
-            this.maskedTextBox3.TabIndex = 1;
-            this.maskedTextBox3.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(137)))), ((int)(((byte)(200)))));
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(7, 9);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(112, 17);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Number of Rows";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(81)))), ((int)(((byte)(109)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(0, 123);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(203, 51);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Create New Zone";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -503,6 +503,14 @@
             this.menuStrip1.PerformLayout();
             this.roomMapSidePanel.ResumeLayout(false);
             this.roomMapSidePanel.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -512,14 +520,6 @@
             this.Inventory.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
