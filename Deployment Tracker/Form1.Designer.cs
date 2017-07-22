@@ -90,13 +90,13 @@
             // addItemTypeToolStripMenuItem
             // 
             this.addItemTypeToolStripMenuItem.Name = "addItemTypeToolStripMenuItem";
-            this.addItemTypeToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.addItemTypeToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.addItemTypeToolStripMenuItem.Text = "Add Item Type...";
             // 
             // addNewZoneToolStripMenuItem
             // 
             this.addNewZoneToolStripMenuItem.Name = "addNewZoneToolStripMenuItem";
-            this.addNewZoneToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.addNewZoneToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.addNewZoneToolStripMenuItem.Text = "Add Zone...";
             // 
             // tabControl1
@@ -270,7 +270,7 @@
             this.createMapBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createMapBtn.Location = new System.Drawing.Point(0, 368);
             this.createMapBtn.Name = "createMapBtn";
-            this.createMapBtn.Size = new System.Drawing.Size(267, 51);
+            this.createMapBtn.Size = new System.Drawing.Size(0, 51);
             this.createMapBtn.TabIndex = 0;
             this.createMapBtn.Text = "Create Map";
             this.createMapBtn.UseVisualStyleBackColor = false;
