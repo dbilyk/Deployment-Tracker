@@ -90,13 +90,13 @@
             // addItemTypeToolStripMenuItem
             // 
             this.addItemTypeToolStripMenuItem.Name = "addItemTypeToolStripMenuItem";
-            this.addItemTypeToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.addItemTypeToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.addItemTypeToolStripMenuItem.Text = "Add Item Type...";
             // 
             // addNewZoneToolStripMenuItem
             // 
             this.addNewZoneToolStripMenuItem.Name = "addNewZoneToolStripMenuItem";
-            this.addNewZoneToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.addNewZoneToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.addNewZoneToolStripMenuItem.Text = "Add Zone...";
             // 
             // tabControl1
