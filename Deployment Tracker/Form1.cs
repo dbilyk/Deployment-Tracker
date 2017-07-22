@@ -17,8 +17,16 @@ namespace Deployment_Tracker
         public Form1()
         {
             InitializeComponent();
+            Components.MainApp = this;
+            addZoneMenuItem.Click += new System.EventHandler(this.OnAddZone);
         }
         
+        private void OnAddZone(object sender, EventArgs e)
+        {
+            ZoneCreatorPopup ZonePopup = new ZoneCreatorPopup();
+            ZonePopup.ShowDialog();
+        }
+
         //makes sure only one of the two room grid creation methods are used.
         private void numRoomsTxt_Click(object sender, EventArgs e)
         {
@@ -40,6 +48,7 @@ namespace Deployment_Tracker
             RoomMap.ColumnStyles.Clear();
             RoomMap.RowStyles.Clear();
             RoomMap.Controls.Clear();
+            Debug.WriteLine("HERE");
 
             //create table via total desired rooms
             if (numRoomsTxt.Text != "")
@@ -121,20 +130,46 @@ namespace Deployment_Tracker
 
                 }
             }
-
+        }
+        
 
         }
 
 
-        public class ZoneCreatorPopup : Form
+    public partial class ZoneCreatorPopup : Form
+    {
+        public AddRoomPopup PopupContent = new AddRoomPopup();
+        public Form1 MainApp = Components.MainApp;
+
+        public ZoneCreatorPopup()
         {
-
+            InitializeComponent();
         }
 
-        public class Data
+        private void InitializeComponent()
         {
-
+            this.SuspendLayout();
+            // 
+            // oneCreatorPopup
+            // 
+            this.ClientSize = new System.Drawing.Size(250, 200);
+            this.Name = "ZoneCreatorPopup";
+            this.ResumeLayout(true);
+            
+            this.Controls.Add(PopupContent);
+            PopupContent.Dock = DockStyle.Fill;
         }
+        
+
+
+    }
+
+    public static class Components
+    {
+        public static Form1 MainApp;
+        
+
+    }
 
 
         public class RoomCell : Form
@@ -224,4 +259,4 @@ namespace Deployment_Tracker
 
         }
     }
-}
+

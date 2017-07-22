@@ -32,7 +32,7 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addItemTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addNewZoneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addZoneMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.roomMapSidePanel = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -97,7 +97,7 @@
             // 
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addItemTypeToolStripMenuItem,
-            this.addNewZoneToolStripMenuItem});
+            this.addZoneMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.settingsToolStripMenuItem.Text = "Settings";
@@ -108,11 +108,11 @@
             this.addItemTypeToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.addItemTypeToolStripMenuItem.Text = "Add Item Type...";
             // 
-            // addNewZoneToolStripMenuItem
+            // addZoneMenuItem
             // 
-            this.addNewZoneToolStripMenuItem.Name = "addNewZoneToolStripMenuItem";
-            this.addNewZoneToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.addNewZoneToolStripMenuItem.Text = "Add Zone...";
+            this.addZoneMenuItem.Name = "addZoneMenuItem";
+            this.addZoneMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.addZoneMenuItem.Text = "Add Zone...";
             // 
             // roomMapSidePanel
             // 
@@ -531,7 +531,7 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addItemTypeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addNewZoneToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addZoneMenuItem;
         private System.Windows.Forms.Panel roomMapSidePanel;
         private System.Windows.Forms.Button createMapBtn;
         private System.Windows.Forms.Panel panel4;
