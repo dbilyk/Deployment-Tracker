@@ -305,7 +305,7 @@
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 24);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 709);
+            this.splitter1.Size = new System.Drawing.Size(3, 796);
             this.splitter1.TabIndex = 2;
             this.splitter1.TabStop = false;
             // 
@@ -314,7 +314,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1354, 733);
+            this.ClientSize = new System.Drawing.Size(1354, 820);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
@@ -365,5 +365,8 @@
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.MaskedTextBox numRoomsTxt;
     }
+
+    
+
 }
 
