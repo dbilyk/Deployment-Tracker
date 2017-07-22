@@ -17,15 +17,14 @@ namespace Deployment_Tracker
         {
             InitializeComponent();
         }
-
-        public List<RoomCell> RoomCellObjects = new List<RoomCell>();
-
+        
         //makes sure only one of the two room grid creation methods are used.
         private void numRoomsTxt_Click(object sender, EventArgs e)
         {
             numColTxt.Clear();
             numRowsTxt.Clear();
         }
+
         private void numRowsTxt_Click(object sender, EventArgs e)
         {
             numRoomsTxt.Clear();
@@ -108,7 +107,7 @@ namespace Deployment_Tracker
 
             }
 
-            //room IDs are stores as a column, then row int array.
+
             for (int i = 0; i < RoomMap.ColumnCount; i++)
             {
                 for (int j = 0; j < RoomMap.RowCount; j++)
@@ -117,12 +116,13 @@ namespace Deployment_Tracker
                     RoomCell cell = new RoomCell(currentID);
                     cell.id = currentID;
                     RoomMap.Controls.Add(cell.cont, i, j);
-                    RoomCellObjects.Add(cell);
+
+
                 }
             }
+
+
         }
-
-
         public class RoomCell : Form
         {
             public int[] id = new int[2];
@@ -136,54 +136,50 @@ namespace Deployment_Tracker
                 this.id = cellID;
                 this.lbl.Text = cellID[0].ToString() + "," + cellID[1].ToString();
                 lbl.AutoSize = true;
-                Size minSize = new Size(30, 20);
-                lbl.BackColor = Color.FromArgb(50,200,200,255);
-                this.lbl.MinimumSize = minSize;
+
                 this.cont.Dock = DockStyle.Fill;
                 this.cont.Controls.Add(this.lbl);
                 this.cont.Controls.Add(this.inputName);
-
-                this.inputName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnKeyDownHandler);
-
-                this.inputName.Visible = false;
 
                 this.cont.Click += delegate
                 {
                     this.cont.Focus();
                 };
-                
+
+
+
+
+                this.inputName.Visible = false;
                 this.lbl.Click += delegate
                 {
+                    
                     this.inputName.Visible = true;
                     this.inputName.Focus();
                     this.lbl.Visible = false;
 
                 };
 
+                this.inputName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnKeyDownHandler);
+
+                
+
                 this.inputName.LostFocus += delegate
                 {
                     this.inputName.Visible = false;
-                    if (this.inputName.Text == "")
-                    {
-                        this.lbl.Text = "---";
-                    }
-                    else
-                    {
-                        this.lbl.Text = this.inputName.Text;
-
-                    }
+                    this.lbl.Text = this.inputName.Text;
                     this.lbl.Visible = true;
                 };
+
+
+               
                 
             }
 
-            //handles enter key support for room names
             public void OnKeyDownHandler(object sender, KeyEventArgs e)
             {
                 if (e.KeyCode == Keys.Enter)
                 {
-                    Control sendr = (Control)sender;
-                    sendr.Parent.Focus();
+                    this.Parent.Focus();
                 }
             }
 
@@ -198,7 +194,9 @@ namespace Deployment_Tracker
                 this.ResumeLayout(false);
 
             }
-            
+
+
+
         }
     }
 }
