@@ -27,13 +27,60 @@ namespace Deployment_Tracker
             ZonePopup.ShowDialog();
         }
 
+        
+
+        }
+
+
+    public partial class ZoneCreatorPopup : Form
+    {
+        public Form1 MainApp = Components.MainApp;
+        public AddRoomPopup PopupContent = new AddRoomPopup();
+        public MaskedTextBox numRoomsTxt;
+        public MaskedTextBox numRowsTxt;
+        public MaskedTextBox numColTxt;
+        public Button createMapBtn;
+        public TableLayoutPanel RoomMap;
+
+        public ZoneCreatorPopup()
+        {
+            this.Controls.Add(PopupContent);
+            PopupContent.Dock = DockStyle.Fill;
+            //map all original zone creation Controls to identical variable names since its now a template and doesnt exist until runtime.
+            numRoomsTxt = (MaskedTextBox)PopupContent.Controls.Find("numRoomsTxt", true)[0];
+            numRowsTxt = (MaskedTextBox)PopupContent.Controls.Find("numRowsTxt", true)[0];
+            numColTxt = (MaskedTextBox)PopupContent.Controls.Find("numColTxt", true)[0];
+            createMapBtn = (Button)PopupContent.Controls.Find("CreateMapBtn", true)[0];
+            RoomMap = (TableLayoutPanel)MainApp.Controls.Find("RoomMap", true)[0];
+
+            //add events for all clicks to hook up to the original handlers.
+            numRoomsTxt.Click += new System.EventHandler(this.numRoomsTxt_Click);
+            numRowsTxt.Click += new System.EventHandler(this.numRowsTxt_Click);
+            numColTxt.Click += new System.EventHandler(this.numColTxt_Click);
+            createMapBtn.Click += new System.EventHandler(this.createMapBtn_Click);
+
+
+            InitializeComponent();
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // oneCreatorPopup
+            // 
+            this.ClientSize = new System.Drawing.Size(250, 200);
+            this.Name = "ZoneCreatorPopup";
+            this.ResumeLayout(true);
+           
+        }
+
         //makes sure only one of the two room grid creation methods are used.
         private void numRoomsTxt_Click(object sender, EventArgs e)
         {
             numColTxt.Clear();
             numRowsTxt.Clear();
         }
-
         private void numRowsTxt_Click(object sender, EventArgs e)
         {
             numRoomsTxt.Clear();
@@ -132,36 +179,6 @@ namespace Deployment_Tracker
             }
         }
         
-
-        }
-
-
-    public partial class ZoneCreatorPopup : Form
-    {
-        public AddRoomPopup PopupContent = new AddRoomPopup();
-        public Form1 MainApp = Components.MainApp;
-
-        public ZoneCreatorPopup()
-        {
-            InitializeComponent();
-        }
-
-        private void InitializeComponent()
-        {
-            this.SuspendLayout();
-            // 
-            // oneCreatorPopup
-            // 
-            this.ClientSize = new System.Drawing.Size(250, 200);
-            this.Name = "ZoneCreatorPopup";
-            this.ResumeLayout(true);
-            
-            this.Controls.Add(PopupContent);
-            PopupContent.Dock = DockStyle.Fill;
-        }
-        
-
-
     }
 
     public static class Components

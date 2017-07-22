@@ -308,7 +308,6 @@
             this.numRoomsTxt.Size = new System.Drawing.Size(45, 20);
             this.numRoomsTxt.TabIndex = 1;
             this.numRoomsTxt.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.numRoomsTxt.Click += new System.EventHandler(this.numRoomsTxt_Click);
             // 
             // roomQtyLbl
             // 
@@ -358,7 +357,6 @@
             this.numColTxt.Size = new System.Drawing.Size(45, 20);
             this.numColTxt.TabIndex = 1;
             this.numColTxt.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.numColTxt.Click += new System.EventHandler(this.numColTxt_Click);
             // 
             // label3
             // 
@@ -397,7 +395,6 @@
             this.numRowsTxt.Size = new System.Drawing.Size(45, 20);
             this.numRowsTxt.TabIndex = 1;
             this.numRowsTxt.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.numRowsTxt.Click += new System.EventHandler(this.numRowsTxt_Click);
             // 
             // label2
             // 
@@ -427,7 +424,6 @@
             this.createMapBtn.TabIndex = 0;
             this.createMapBtn.Text = "Create New Zone";
             this.createMapBtn.UseVisualStyleBackColor = false;
-            this.createMapBtn.Click += new System.EventHandler(this.createMapBtn_Click);
             // 
             // splitter1
             // 
