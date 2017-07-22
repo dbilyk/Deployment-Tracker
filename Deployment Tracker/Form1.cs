@@ -131,25 +131,30 @@ namespace Deployment_Tracker
             public TextBox inputName = new TextBox();
             public Panel cont = new Panel();
 
+
             public RoomCell(int[] cellID)
             {
                 this.id = cellID;
                 this.lbl.Text = cellID[0].ToString() + "," + cellID[1].ToString();
-                lbl.AutoSize = true;
+                this.lbl.AutoSize = false;
+                this.lbl.TextAlign = ContentAlignment.TopCenter;
+                this.inputName.Dock = DockStyle.Top;
+                
+                this.inputName.TextAlign = HorizontalAlignment.Center;
 
                 this.cont.Dock = DockStyle.Fill;
                 this.cont.Controls.Add(this.lbl);
                 this.cont.Controls.Add(this.inputName);
+                this.inputName.Visible = false;
+
+                this.lbl.Dock = DockStyle.Top;
+                
 
                 this.cont.Click += delegate
                 {
                     this.cont.Focus();
                 };
 
-
-
-
-                this.inputName.Visible = false;
                 this.lbl.Click += delegate
                 {
                     
@@ -157,29 +162,34 @@ namespace Deployment_Tracker
                     this.inputName.Focus();
                     this.lbl.Visible = false;
 
-                };
-
-                this.inputName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnKeyDownHandler);
-
-                
-
+                };                
                 this.inputName.LostFocus += delegate
                 {
                     this.inputName.Visible = false;
-                    this.lbl.Text = this.inputName.Text;
+                    if(this.inputName.Text == "")
+                    {
+                        this.lbl.Text = "---";
+                    }
+                    else
+                    {
+                        this.lbl.Text = this.inputName.Text;
+
+                    }
                     this.lbl.Visible = true;
                 };
+                this.inputName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnKeyDownHandler);
 
 
-               
-                
+
+
             }
 
             public void OnKeyDownHandler(object sender, KeyEventArgs e)
             {
                 if (e.KeyCode == Keys.Enter)
                 {
-                    Text
+                    TextBox sendr = (TextBox)sender;
+                    sendr.Parent.Focus();
                 }
             }
 
