@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace Deployment_Tracker
 {
+
     public partial class Form1 : Form
     {
         public Form1()
@@ -123,6 +124,19 @@ namespace Deployment_Tracker
 
 
         }
+
+
+        public class ZoneCreatorPopup : Form
+        {
+
+        }
+
+        public class Data
+        {
+
+        }
+
+
         public class RoomCell : Form
         {
             public int[] id = new int[2];
