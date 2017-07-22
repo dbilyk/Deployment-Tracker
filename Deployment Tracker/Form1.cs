@@ -133,6 +133,7 @@ namespace Deployment_Tracker
 
 
             public RoomCell(int[] cellID)
+
             {
                 this.id = cellID;
                 this.lbl.Text = cellID[0].ToString() + "," + cellID[1].ToString();
