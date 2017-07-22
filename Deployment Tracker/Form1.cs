@@ -18,9 +18,10 @@ namespace Deployment_Tracker
         {
             InitializeComponent();
             Components.MainApp = this;
+            //when settings > add zone is clicked...
             addZoneMenuItem.Click += new System.EventHandler(this.OnAddZone);
         }
-        
+        //Add Zone popup
         private void OnAddZone(object sender, EventArgs e)
         {
             ZoneCreatorPopup ZonePopup = new ZoneCreatorPopup();
@@ -42,6 +43,7 @@ namespace Deployment_Tracker
         public Button createMapBtn;
         public TableLayoutPanel RoomMap;
 
+        //contructor
         public ZoneCreatorPopup()
         {
             this.Controls.Add(PopupContent);
@@ -75,6 +77,7 @@ namespace Deployment_Tracker
            
         }
 
+        //event handlers
         //makes sure only one of the two room grid creation methods are used.
         private void numRoomsTxt_Click(object sender, EventArgs e)
         {

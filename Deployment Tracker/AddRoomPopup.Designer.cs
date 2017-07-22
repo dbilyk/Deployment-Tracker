@@ -188,7 +188,7 @@
             // 
             // createMapBtn
             // 
-            this.createMapBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(81)))), ((int)(((byte)(109)))));
+            this.createMapBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(0)))));
             this.createMapBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.createMapBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.createMapBtn.FlatAppearance.BorderSize = 0;
