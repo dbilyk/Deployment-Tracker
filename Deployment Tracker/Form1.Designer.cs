@@ -34,11 +34,9 @@
             this.addItemTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addZoneMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitter1 = new System.Windows.Forms.Splitter();
-            this.Inventory = new System.Windows.Forms.TabPage();
-            this.RoomMap = new System.Windows.Forms.TableLayoutPanel();
+            this.T1 = new System.Windows.Forms.TabPage();
             this.ZoneTabs = new System.Windows.Forms.TabControl();
             this.menuStrip1.SuspendLayout();
-            this.Inventory.SuspendLayout();
             this.ZoneTabs.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,38 +86,21 @@
             this.splitter1.TabIndex = 2;
             this.splitter1.TabStop = false;
             // 
-            // Inventory
+            // T1
             // 
-            this.Inventory.Controls.Add(this.RoomMap);
-            this.Inventory.Location = new System.Drawing.Point(4, 22);
-            this.Inventory.Name = "Inventory";
-            this.Inventory.Padding = new System.Windows.Forms.Padding(3);
-            this.Inventory.Size = new System.Drawing.Size(1022, 396);
-            this.Inventory.TabIndex = 0;
-            this.Inventory.Text = "tabPage1";
-            this.Inventory.UseVisualStyleBackColor = true;
-            // 
-            // RoomMap
-            // 
-            this.RoomMap.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.RoomMap.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.RoomMap.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
-            this.RoomMap.ColumnCount = 1;
-            this.RoomMap.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.RoomMap.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RoomMap.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.AddColumns;
-            this.RoomMap.Location = new System.Drawing.Point(3, 3);
-            this.RoomMap.Name = "RoomMap";
-            this.RoomMap.RowCount = 1;
-            this.RoomMap.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.RoomMap.Size = new System.Drawing.Size(1016, 390);
-            this.RoomMap.TabIndex = 0;
+            this.T1.Location = new System.Drawing.Point(4, 22);
+            this.T1.Name = "T1";
+            this.T1.Padding = new System.Windows.Forms.Padding(3);
+            this.T1.Size = new System.Drawing.Size(1022, 396);
+            this.T1.TabIndex = 0;
+            this.T1.Text = "(Empty Zone)";
+            this.T1.UseVisualStyleBackColor = true;
             // 
             // ZoneTabs
             // 
             this.ZoneTabs.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ZoneTabs.Controls.Add(this.Inventory);
+            this.ZoneTabs.Controls.Add(this.T1);
             this.ZoneTabs.Location = new System.Drawing.Point(298, 27);
             this.ZoneTabs.Name = "ZoneTabs";
             this.ZoneTabs.SelectedIndex = 0;
@@ -140,7 +121,6 @@
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.Inventory.ResumeLayout(false);
             this.ZoneTabs.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -155,8 +135,7 @@
         private System.Windows.Forms.ToolStripMenuItem addItemTypeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addZoneMenuItem;
         private System.Windows.Forms.Splitter splitter1;
-        private System.Windows.Forms.TabPage Inventory;
-        private System.Windows.Forms.TableLayoutPanel RoomMap;
+        private System.Windows.Forms.TabPage T1;
         private System.Windows.Forms.TabControl ZoneTabs;
     }
 

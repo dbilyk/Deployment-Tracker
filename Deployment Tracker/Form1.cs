@@ -14,10 +14,12 @@ namespace Deployment_Tracker
 
     public partial class Form1 : Form
     {
+        // Constructor
         public Form1()
         {
             InitializeComponent();
-            Components.MainApp = this;
+            S_Components.MainApp = this;
+            S_Components.ZoneTabs = this.ZoneTabs;
             //when settings > add zone is clicked...
             addZoneMenuItem.Click += new System.EventHandler(this.OnAddZone);
         }
@@ -32,14 +34,15 @@ namespace Deployment_Tracker
 
         }
 
-
     public partial class ZoneCreatorPopup : Form
     {
-        public Form1 MainApp = Components.MainApp;
+        public Form1 MainApp = S_Components.MainApp;
+        public TabControl ZoneTabs = S_Components.ZoneTabs;
         public AddRoomPopup PopupContent = new AddRoomPopup();
         public MaskedTextBox numRoomsTxt;
         public MaskedTextBox numRowsTxt;
         public MaskedTextBox numColTxt;
+        public TextBox ZoneName;
         public Button createMapBtn;
         public TableLayoutPanel RoomMap;
 
@@ -48,19 +51,24 @@ namespace Deployment_Tracker
         {
             this.Controls.Add(PopupContent);
             PopupContent.Dock = DockStyle.Fill;
+
+            ZoneTabs.TabPages.Add(new TabPage());
+
             //map all original zone creation Controls to identical variable names since its now a template and doesnt exist until runtime.
             numRoomsTxt = (MaskedTextBox)PopupContent.Controls.Find("numRoomsTxt", true)[0];
             numRowsTxt = (MaskedTextBox)PopupContent.Controls.Find("numRowsTxt", true)[0];
             numColTxt = (MaskedTextBox)PopupContent.Controls.Find("numColTxt", true)[0];
+            ZoneName = (TextBox)PopupContent.Controls.Find("ZoneName", true)[0];
             createMapBtn = (Button)PopupContent.Controls.Find("CreateMapBtn", true)[0];
-            RoomMap = (TableLayoutPanel)MainApp.Controls.Find("RoomMap", true)[0];
-
+            
             //add events for all clicks to hook up to the original handlers.
             numRoomsTxt.Click += new System.EventHandler(this.numRoomsTxt_Click);
             numRowsTxt.Click += new System.EventHandler(this.numRowsTxt_Click);
             numColTxt.Click += new System.EventHandler(this.numColTxt_Click);
             createMapBtn.Click += new System.EventHandler(this.createMapBtn_Click);
 
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler (this.ExitWithoutCreatingZone);
+            
 
             InitializeComponent();
         }
@@ -77,6 +85,8 @@ namespace Deployment_Tracker
            
         }
 
+        
+
         //event handlers
         //makes sure only one of the two room grid creation methods are used.
         private void numRoomsTxt_Click(object sender, EventArgs e)
@@ -92,9 +102,15 @@ namespace Deployment_Tracker
         {
             numRoomsTxt.Clear();
         }
-
         private void createMapBtn_Click(object sender, EventArgs e)
         {
+            //creates new table and inserts it into the currently selected Tab.
+            RoomMap = new TableLayoutPanel();
+            TabPage currentTab = ZoneTabs.SelectedTab;
+            currentTab.Controls.Add(RoomMap);
+            RoomMap.Dock = DockStyle.Fill;
+            RoomMap.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
+
             RoomMap.ColumnStyles.Clear();
             RoomMap.RowStyles.Clear();
             RoomMap.Controls.Clear();
@@ -172,98 +188,99 @@ namespace Deployment_Tracker
             {
                 for (int j = 0; j < RoomMap.RowCount; j++)
                 {
-                    int[] currentID = new int[] { i, j };
-                    RoomCell cell = new RoomCell(currentID);
-                    cell.id = currentID;
+                    
+                    RoomCell cell = new RoomCell();
+                    S_Components.RoomCells.Add(cell);
+                    cell.id = S_Components.RoomCells.Count;
                     RoomMap.Controls.Add(cell.cont, i, j);
 
 
                 }
             }
+
+            
+            ZoneTabs.SelectedTab.Text = ZoneName.Text;
+            ZoneTabs.TabPages.Add(new TabPage());
+            this.Close();
+
         }
-        
-    }
-
-    public static class Components
-    {
-        public static Form1 MainApp;
-        
-
-    }
-
-
-        public class RoomCell : Form
+        private void ExitWithoutCreatingZone(object sender, EventArgs e)
         {
-            public int[] id = new int[2];
-            public string name;
-            public Label lbl = new Label();
-            public TextBox inputName = new TextBox();
-            public Panel cont = new Panel();
+            ZoneTabs.TabPages.RemoveAt(ZoneTabs.TabPages.Count - 1);
+        }
+
+        
+    }
+    
+    public class RoomCell : Form
+    {
+        public int id;
+        public string name;
+        public Label lbl = new Label();
+        public TextBox inputName = new TextBox();
+        public Panel cont = new Panel();
 
 
-            public RoomCell(int[] cellID)
+        public RoomCell()
 
+        {
+            this.lbl.Text = "---";
+            this.lbl.AutoSize = false;
+            this.lbl.TextAlign = ContentAlignment.TopCenter;
+            this.inputName.Dock = DockStyle.Top;
+                
+            this.inputName.TextAlign = HorizontalAlignment.Center;
+
+            this.cont.Dock = DockStyle.Fill;
+            this.cont.Controls.Add(this.lbl);
+            this.cont.Controls.Add(this.inputName);
+            this.inputName.Visible = false;
+
+            this.lbl.Dock = DockStyle.Top;
+                
+
+            this.cont.Click += delegate
             {
-                this.id = cellID;
-                this.lbl.Text = cellID[0].ToString() + "," + cellID[1].ToString();
-                this.lbl.AutoSize = false;
-                this.lbl.TextAlign = ContentAlignment.TopCenter;
-                this.inputName.Dock = DockStyle.Top;
-                
-                this.inputName.TextAlign = HorizontalAlignment.Center;
+                this.cont.Focus();
+            };
 
-                this.cont.Dock = DockStyle.Fill;
-                this.cont.Controls.Add(this.lbl);
-                this.cont.Controls.Add(this.inputName);
-                this.inputName.Visible = false;
-
-                this.lbl.Dock = DockStyle.Top;
-                
-
-                this.cont.Click += delegate
-                {
-                    this.cont.Focus();
-                };
-
-                this.lbl.Click += delegate
-                {
+            this.lbl.Click += delegate
+            {
                     
-                    this.inputName.Visible = true;
-                    this.inputName.Focus();
-                    this.lbl.Visible = false;
+                this.inputName.Visible = true;
+                this.inputName.Focus();
+                this.lbl.Visible = false;
 
-                };                
-                this.inputName.LostFocus += delegate
-                {
-                    this.inputName.Visible = false;
-                    if(this.inputName.Text == "")
-                    {
-                        this.lbl.Text = "---";
-                    }
-                    else
-                    {
-                        this.lbl.Text = this.inputName.Text;
-
-                    }
-                    this.lbl.Visible = true;
-                };
-                this.inputName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnKeyDownHandler);
-
-
-
-
-            }
-
-            public void OnKeyDownHandler(object sender, KeyEventArgs e)
+            };                
+            this.inputName.LostFocus += delegate
             {
-                if (e.KeyCode == Keys.Enter)
+                this.inputName.Visible = false;
+                if(this.inputName.Text == "")
                 {
-                    TextBox sendr = (TextBox)sender;
-                    sendr.Parent.Focus();
+                    this.lbl.Text = "---";
                 }
-            }
+                else
+                {
+                    this.lbl.Text = this.inputName.Text;
 
-            private void InitializeComponent()
+                }
+                this.lbl.Visible = true;
+            };
+            this.inputName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnKeyDownHandler);
+
+
+
+
+        }
+        public void OnKeyDownHandler(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                TextBox sendr = (TextBox)sender;
+                sendr.Parent.Focus();
+            }
+        }
+        private void InitializeComponent()
             {
                 this.SuspendLayout();
                 // 
@@ -277,6 +294,6 @@ namespace Deployment_Tracker
 
 
 
-        }
     }
+}
 

@@ -40,6 +40,7 @@
             this.numRowsTxt = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.createMapBtn = new System.Windows.Forms.Button();
+            this.ZoneName = new System.Windows.Forms.TextBox();
             this.roomMapSidePanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -54,6 +55,7 @@
             this.roomMapSidePanel.Controls.Add(this.OR);
             this.roomMapSidePanel.Controls.Add(this.panel4);
             this.roomMapSidePanel.Controls.Add(this.panel3);
+            this.roomMapSidePanel.Controls.Add(this.ZoneName);
             this.roomMapSidePanel.Controls.Add(this.createMapBtn);
             this.roomMapSidePanel.Location = new System.Drawing.Point(0, 0);
             this.roomMapSidePanel.Name = "roomMapSidePanel";
@@ -104,7 +106,7 @@
             this.OR.AutoSize = true;
             this.OR.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.OR.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OR.Location = new System.Drawing.Point(0, 39);
+            this.OR.Location = new System.Drawing.Point(0, 19);
             this.OR.Name = "OR";
             this.OR.Size = new System.Drawing.Size(31, 17);
             this.OR.TabIndex = 2;
@@ -116,7 +118,7 @@
             this.panel4.Controls.Add(this.numColTxt);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 56);
+            this.panel4.Location = new System.Drawing.Point(0, 36);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(3);
             this.panel4.Size = new System.Drawing.Size(209, 35);
@@ -154,7 +156,7 @@
             this.panel3.Controls.Add(this.numRowsTxt);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 91);
+            this.panel3.Location = new System.Drawing.Point(0, 71);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(3);
             this.panel3.Size = new System.Drawing.Size(209, 36);
@@ -201,13 +203,22 @@
             this.createMapBtn.Text = "Create New Zone";
             this.createMapBtn.UseVisualStyleBackColor = false;
             // 
+            // ZoneName
+            // 
+            this.ZoneName.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ZoneName.Location = new System.Drawing.Point(0, 107);
+            this.ZoneName.Name = "ZoneName";
+            this.ZoneName.Size = new System.Drawing.Size(209, 20);
+            this.ZoneName.TabIndex = 3;
+            this.ZoneName.Text = "Zone Name...";
+            // 
             // AddRoomPopup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.roomMapSidePanel);
             this.Name = "AddRoomPopup";
-            this.Size = new System.Drawing.Size(211, 178);
+            this.Size = new System.Drawing.Size(211, 232);
             this.roomMapSidePanel.ResumeLayout(false);
             this.roomMapSidePanel.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -234,5 +245,6 @@
         private System.Windows.Forms.MaskedTextBox numRowsTxt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button createMapBtn;
+        private System.Windows.Forms.TextBox ZoneName;
     }
 }
